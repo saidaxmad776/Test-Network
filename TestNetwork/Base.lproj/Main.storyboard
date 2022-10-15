@@ -12,7 +12,7 @@
         <!--Controls-->
         <scene sceneID="PnZ-hL-Cc6">
             <objects>
-                <viewController id="JJp-QX-ZzG" customClass="ViewController" customModule="TestNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JJp-QX-ZzG" customClass="ViewControllerSet" customModule="TestNetwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CRM-sK-LgV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="POST">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="postRequest:" destination="JJp-QX-ZzG" eventType="touchUpInside" id="yEK-Hl-S2Z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qol-N1-wYb">
                                 <rect key="frame" x="30" y="213" width="354" height="70"/>
@@ -52,6 +55,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="GET">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="getRequest:" destination="JJp-QX-ZzG" eventType="touchUpInside" id="nt1-yJ-d2d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Adu-ON-UMa"/>
