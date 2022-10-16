@@ -109,13 +109,59 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sNR-z6-YCC" customClass="CourseTableViewCell" customModule="TestNetwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="130" id="sNR-z6-YCC" customClass="CourseTableViewCell" customModule="TestNetwork" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sNR-z6-YCC" id="BNm-8J-7it">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lvl-tn-zs6">
+                                                    <rect key="frame" x="10" y="5" width="129" height="128"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dQN-xs-1JY">
+                                                    <rect key="frame" x="159" y="10" width="235" height="110"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCm-rr-A03">
+                                                            <rect key="frame" x="0.0" y="0.0" width="235" height="27.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namber of Lesson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-HZ-mMw">
+                                                            <rect key="frame" x="0.0" y="37.5" width="235" height="28"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaQ-xK-dM2">
+                                                            <rect key="frame" x="0.0" y="75.5" width="235" height="34.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Lvl-tn-zs6" secondAttribute="width" multiplier="3.2093" id="AMX-sG-yFO"/>
+                                                <constraint firstAttribute="trailing" secondItem="dQN-xs-1JY" secondAttribute="trailing" constant="20" id="DDR-pO-fU9"/>
+                                                <constraint firstItem="dQN-xs-1JY" firstAttribute="leading" secondItem="Lvl-tn-zs6" secondAttribute="trailing" constant="20" id="Ism-OK-IRQ"/>
+                                                <constraint firstItem="Lvl-tn-zs6" firstAttribute="top" secondItem="BNm-8J-7it" secondAttribute="top" constant="5" id="QgD-2H-UGp"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lvl-tn-zs6" secondAttribute="bottom" constant="5" id="XXe-7i-FbJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="dQN-xs-1JY" secondAttribute="bottom" constant="10" id="mNg-ii-c0g"/>
+                                                <constraint firstItem="dQN-xs-1JY" firstAttribute="top" secondItem="BNm-8J-7it" secondAttribute="top" constant="10" id="mWN-H0-b4u"/>
+                                                <constraint firstAttribute="height" secondItem="Lvl-tn-zs6" secondAttribute="height" multiplier="1.01562" id="sub-oW-517"/>
+                                                <constraint firstItem="Lvl-tn-zs6" firstAttribute="leading" secondItem="BNm-8J-7it" secondAttribute="leading" constant="10" id="uBe-UO-YLE"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseImage" destination="Lvl-tn-zs6" id="Kav-G4-lal"/>
+                                            <outlet property="courseNameLabel" destination="YCm-rr-A03" id="ZdO-xU-6bg"/>
+                                            <outlet property="numberOfLesson" destination="yYt-HZ-mMw" id="SeL-JE-uDO"/>
+                                            <outlet property="numberOfTests" destination="FaQ-xK-dM2" id="RxY-2z-Lcp"/>
+                                            <segue destination="gTp-td-cdt" kind="show" identifier="description" id="mYx-8S-6Jj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -141,6 +187,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWf-Uw-veD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1569.5652173913045" y="548.4375"/>
+        </scene>
+        <!--Web View-->
+        <scene sceneID="fmC-jY-ARM">
+            <objects>
+                <viewController id="gTp-td-cdt" customClass="WebViewController" customModule="TestNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jcn-bA-jHf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4Uq-Nd-aKg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Web View" id="5Bq-Zu-Uxe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dE-nc-ber" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2351" y="548"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="rYC-IA-uqi">
