@@ -9,6 +9,9 @@ import UIKit
 
 class ImageViewController: UIViewController {
 
+    private let url = """
+https://image.winudf.com/v2/image1/Y29tLmJlYXV0aWZ1bC53YWxscGFwZXJzLmFuZC5oZC5iYWNrZ3JvdW5kcy5uYXR1cmVfc2NyZWVuXzBfMTU3NjExODAzNV8wNzM/screen-0.jpg?fakeurl=1&type=.webp
+"""
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var downloadLabel: UILabel!
@@ -30,20 +33,10 @@ class ImageViewController: UIViewController {
         activitiyEndigator.isHidden = false
         activitiyEndigator.startAnimating()
         
-        // Это его URL
-        guard let url = URL(string: "https://image.winudf.com/v2/image1/Y29tLmJlYXV0aWZ1bC53YWxscGFwZXJzLmFuZC5oZC5iYWNrZ3JvdW5kcy5uYXR1cmVfc2NyZWVuXzBfMTU3NjExODAzNV8wNzM/screen-0.jpg?fakeurl=1&type=.webp") else { return }
-        
-        // Экземпляр URLSession
-        let session = URLSession.shared
-        
-        session.dataTask(with: url) { data, response, error in
-            if let data = data, let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self.activitiyEndigator.stopAnimating()
-                    self.imageView.image = image
-                }
-            }
-        }.resume()
+        NetworkManager.downloadImage(url: url) { image in
+            self.activitiyEndigator.stopAnimating()
+            self.imageView.image = image
+        }
     }
     
 }

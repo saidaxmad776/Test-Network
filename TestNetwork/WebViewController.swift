@@ -16,10 +16,7 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = selectedCourse
-        
-        guard let url = URL(string: courseURL) else { return }
-        let request = URLRequest(url: url)
+       
     }
     
     

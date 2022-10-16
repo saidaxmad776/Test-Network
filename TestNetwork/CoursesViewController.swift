@@ -14,6 +14,8 @@ class CoursesViewController: UIViewController {
     private var courses = [Course]()
     private var courseName: String?
     private var courseURL: String?
+    private let url = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,25 +30,12 @@ class CoursesViewController: UIViewController {
 //        let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_website_description"
 //        let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_missing_or_wrong_fields"
         
-        let jsonUrlString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
-        guard let url = URL(string: jsonUrlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            
-            guard let data = data else { return }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.courses = try decoder.decode([Course].self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print("error YES", error)
+        NetworkManager.fetchData(url: url) { courses in
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-            
-        }.resume()
+        }
     }
     
     private func configureCell(cell: CourseTableViewCell, for indexPath: IndexPath) {
@@ -106,10 +95,10 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let course = courses[indexPath.row]
-//        
+//
 //        courseURL = course.link
 //        courseName = course.name
-//        
+//
 //        performSegue(withIdentifier: "description", sender: self)
     }
 }
