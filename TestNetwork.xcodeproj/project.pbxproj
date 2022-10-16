@@ -14,6 +14,11 @@
 		52255EDB28FACFCB003793EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52255EDA28FACFCB003793EF /* Assets.xcassets */; };
 		52255EDE28FACFCB003793EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52255EDC28FACFCB003793EF /* LaunchScreen.storyboard */; };
 		52255EE628FAE1FD003793EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EE528FAE1FD003793EF /* ViewController.swift */; };
+		52255EE828FB05E5003793EF /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EE728FB05E5003793EF /* CoursesViewController.swift */; };
+		52255EEA28FB0841003793EF /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EE928FB0841003793EF /* CourseModel.swift */; };
+		52255EEC28FBF146003793EF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EEB28FBF146003793EF /* WebViewController.swift */; };
+		52255EEE28FC10FD003793EF /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EED28FC10FD003793EF /* CourseTableViewCell.swift */; };
+		52255EF028FC15B2003793EF /* WebsiteDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EEF28FC15B2003793EF /* WebsiteDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		52255EDD28FACFCB003793EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52255EDF28FACFCB003793EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52255EE528FAE1FD003793EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52255EE728FB05E5003793EF /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		52255EE928FB0841003793EF /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
+		52255EEB28FBF146003793EF /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		52255EED28FC10FD003793EF /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		52255EEF28FC15B2003793EF /* WebsiteDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,11 @@
 				52255ED328FACFCA003793EF /* SceneDelegate.swift */,
 				52255EE528FAE1FD003793EF /* ViewController.swift */,
 				52255ED528FACFCA003793EF /* ImageViewController.swift */,
+				52255EE728FB05E5003793EF /* CoursesViewController.swift */,
+				52255EED28FC10FD003793EF /* CourseTableViewCell.swift */,
+				52255EE928FB0841003793EF /* CourseModel.swift */,
+				52255EEF28FC15B2003793EF /* WebsiteDescription.swift */,
+				52255EEB28FBF146003793EF /* WebViewController.swift */,
 				52255ED728FACFCA003793EF /* Main.storyboard */,
 				52255EDA28FACFCB003793EF /* Assets.xcassets */,
 				52255EDC28FACFCB003793EF /* LaunchScreen.storyboard */,
@@ -141,10 +156,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52255EF028FC15B2003793EF /* WebsiteDescription.swift in Sources */,
+				52255EEE28FC10FD003793EF /* CourseTableViewCell.swift in Sources */,
+				52255EEA28FB0841003793EF /* CourseModel.swift in Sources */,
 				52255ED628FACFCA003793EF /* ImageViewController.swift in Sources */,
 				52255ED228FACFCA003793EF /* AppDelegate.swift in Sources */,
 				52255EE628FAE1FD003793EF /* ViewController.swift in Sources */,
+				52255EEC28FBF146003793EF /* WebViewController.swift in Sources */,
 				52255ED428FACFCA003793EF /* SceneDelegate.swift in Sources */,
+				52255EE828FB05E5003793EF /* CoursesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

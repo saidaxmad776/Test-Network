@@ -15,6 +15,7 @@ class ViewControllerSet: UIViewController {
         
     }
     
+    //        MARK: - GET Request
     @IBAction func getRequest(_ sender: UIButton) {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
         
@@ -35,6 +36,8 @@ class ViewControllerSet: UIViewController {
         }.resume()
     }
     
+    
+    //        MARK: - POST Request
     @IBAction func postRequest(_ sender: UIButton) {
         
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
