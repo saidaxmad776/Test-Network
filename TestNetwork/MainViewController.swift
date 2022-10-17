@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 enum Actions: String, CaseIterable {
     
@@ -25,13 +26,33 @@ private let uploadImage = "https://api.imgur.com/3/image"
 class MainViewController: UICollectionViewController {
 
 //    let actions = ["Download Image", "GET", "POST", "Our Courses", "Upload Image"]
+    
     let actions = Actions.allCases
     private var alert: UIAlertController!
-
+    private let dataProvider = DataProvaider()
+    private var filePath: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        registerForNotification()
+        
+        dataProvider.fileLocation = { loacation in
+            // Soxranit File dlya ispolzovaniya
+            print("Download finished: \(loacation.absoluteString)")
+            self.filePath = loacation.absoluteString
+            self.alert.dismiss(animated: false, completion: nil)
+            self.postNotification()
+        }
+    }
+    
     private func showAlert() {
         
         alert = UIAlertController(title: "Download...", message: "0%", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { action in
+            
+            self.dataProvider.stopDownload()
+        }
         
         let hight = NSLayoutConstraint(item: alert.view ?? "",
                                        attribute: .height,
@@ -54,7 +75,10 @@ class MainViewController: UICollectionViewController {
             
             let progressView = UIProgressView(frame: CGRect(x: 0, y: self.alert.view.frame.height - 44, width: self.alert.view.frame.width, height: 2))
             progressView.tintColor = .blue
-            progressView.progress = 0.5
+            self.dataProvider.onProgres = { (progress) in
+                progressView.progress = Float(progress)
+                self.alert.message = String(Int(progress * 100)) + "%"
+            }
             
             self.alert.view.addSubview(activityIndicator)
             self.alert.view.addSubview(progressView)
@@ -94,7 +118,29 @@ class MainViewController: UICollectionViewController {
             NetworkManager.uploadImage(url: uploadImage)
         case .downloadFile:
             showAlert()
+            dataProvider.startDownload()
         }
     }
 
+}
+
+extension MainViewController {
+    
+    private func registerForNotification() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in
+            
+        }
+    }
+    
+    private func postNotification() {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Download Complete!"
+        content.body = "Your background OK: \(filePath!)"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "TransferComplecte", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
 }

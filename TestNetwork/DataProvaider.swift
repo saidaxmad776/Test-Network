@@ -21,7 +21,7 @@ class DataProvaider: NSObject {
     }()
     
     func startDownload() {
-        if let url = URL(string: "https://speed.hetzner.de/100MB.bin") {
+        if let url = URL(string: "https://speed.hetzner.de/10MB.bin") {
             
             downloadTask = bgSession.downloadTask(with: url)
             downloadTask.earliestBeginDate = Date().addingTimeInterval(3)
@@ -68,7 +68,7 @@ extension DataProvaider: URLSessionDownloadDelegate {
         
         guard totalBytesExpectedToWrite != NSURLSessionTransferSizeUnknown else { return }
         
-        let progress = Double(totalBytesWritten / totalBytesExpectedToWrite)
+        let progress = Double(totalBytesWritten) / Double(totalBytesExpectedToWrite)
         print("Download Progre: \(progress)")
         
         DispatchQueue.main.async {
