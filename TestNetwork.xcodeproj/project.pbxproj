@@ -21,6 +21,8 @@
 		52255EF228FC3EF3003793EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EF128FC3EF2003793EF /* MainViewController.swift */; };
 		52255EF428FC3F0B003793EF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EF328FC3F0B003793EF /* CollectionViewCell.swift */; };
 		52255EF628FC4ADE003793EF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EF528FC4ADE003793EF /* NetworkManager.swift */; };
+		52255EF828FC6226003793EF /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EF728FC6226003793EF /* ImageProperties.swift */; };
+		52255EFA28FCBC01003793EF /* DataProvaider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52255EF928FCBC01003793EF /* DataProvaider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		52255EF128FC3EF2003793EF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		52255EF328FC3F0B003793EF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		52255EF528FC4ADE003793EF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		52255EF728FC6226003793EF /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
+		52255EF928FCBC01003793EF /* DataProvaider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvaider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,12 +79,14 @@
 				52255ED128FACFCA003793EF /* AppDelegate.swift */,
 				52255ED328FACFCA003793EF /* SceneDelegate.swift */,
 				52255EF528FC4ADE003793EF /* NetworkManager.swift */,
+				52255EF928FCBC01003793EF /* DataProvaider.swift */,
 				52255EF128FC3EF2003793EF /* MainViewController.swift */,
 				52255EF328FC3F0B003793EF /* CollectionViewCell.swift */,
 				52255ED528FACFCA003793EF /* ImageViewController.swift */,
 				52255EE728FB05E5003793EF /* CoursesViewController.swift */,
 				52255EED28FC10FD003793EF /* CourseTableViewCell.swift */,
 				52255EE928FB0841003793EF /* CourseModel.swift */,
+				52255EF728FC6226003793EF /* ImageProperties.swift */,
 				52255EEF28FC15B2003793EF /* WebsiteDescription.swift */,
 				52255EEB28FBF146003793EF /* WebViewController.swift */,
 				52255ED728FACFCA003793EF /* Main.storyboard */,
@@ -168,8 +174,10 @@
 				52255EEA28FB0841003793EF /* CourseModel.swift in Sources */,
 				52255ED628FACFCA003793EF /* ImageViewController.swift in Sources */,
 				52255ED228FACFCA003793EF /* AppDelegate.swift in Sources */,
+				52255EFA28FCBC01003793EF /* DataProvaider.swift in Sources */,
 				52255EEC28FBF146003793EF /* WebViewController.swift in Sources */,
 				52255ED428FACFCA003793EF /* SceneDelegate.swift in Sources */,
+				52255EF828FC6226003793EF /* ImageProperties.swift in Sources */,
 				52255EE828FB05E5003793EF /* CoursesViewController.swift in Sources */,
 				52255EF228FC3EF3003793EF /* MainViewController.swift in Sources */,
 				52255EF428FC3F0B003793EF /* CollectionViewCell.swift in Sources */,

@@ -14,17 +14,27 @@ enum Actions: String, CaseIterable {
     case post = "POST"
     case ourCourses = "Our Courses"
     case uploadImage = "Upload Image"
+    case downloadFile = "Download File"
 }
 
 private let reuseIdentifier = "Cell"
 private let url = "https://jsonplaceholder.typicode.com/posts"
+private let uploadImage = "https://api.imgur.com/3/image"
 
 
 class MainViewController: UICollectionViewController {
 
 //    let actions = ["Download Image", "GET", "POST", "Our Courses", "Upload Image"]
     let actions = Actions.allCases
-    
+    private var alert: UIAlertController!
+
+    private func showAlert() {
+        
+        alert = UIAlertController(title: "Download...", message: "0%", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
 
     // MARK: UICollectionViewDataSource
 
@@ -56,7 +66,9 @@ class MainViewController: UICollectionViewController {
         case .ourCourses:
             performSegue(withIdentifier: "OurCourses", sender: self)
         case .uploadImage:
-            print("Upload Image")
+            NetworkManager.uploadImage(url: uploadImage)
+        case .downloadFile:
+            showAlert()
         }
     }
 
