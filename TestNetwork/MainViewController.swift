@@ -32,10 +32,35 @@ class MainViewController: UICollectionViewController {
         
         alert = UIAlertController(title: "Download...", message: "0%", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        
+        let hight = NSLayoutConstraint(item: alert.view ?? "",
+                                       attribute: .height,
+                                       relatedBy: .equal,
+                                       toItem: nil,
+                                       attribute: .notAnAttribute,
+                                       multiplier: 0,
+                                       constant: 170)
+        alert.view.addConstraint(hight)
+        
         alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true) {
+            let size = CGSize(width: 40, height: 40)
+            let point = CGPoint(x: self.alert.view.frame.width / 2 - size.width / 2,
+                                y: self.alert.view.frame.height / 2 - size.height / 2)
+            
+            let activityIndicator = UIActivityIndicatorView(frame: CGRect(origin: point, size: size))
+            activityIndicator.color = .gray
+            activityIndicator.startAnimating()
+            
+            let progressView = UIProgressView(frame: CGRect(x: 0, y: self.alert.view.frame.height - 44, width: self.alert.view.frame.width, height: 2))
+            progressView.tintColor = .blue
+            progressView.progress = 0.5
+            
+            self.alert.view.addSubview(activityIndicator)
+            self.alert.view.addSubview(progressView)
+        }
     }
-
+    
     // MARK: UICollectionViewDataSource
 
 
